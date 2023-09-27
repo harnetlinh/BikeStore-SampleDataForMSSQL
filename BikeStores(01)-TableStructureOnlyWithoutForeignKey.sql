@@ -1,21 +1,20 @@
-CREATE SCHEMA production;
+CREATE DATABASE BikeStores;
 go
-
-CREATE SCHEMA sales;
+USE BikeStores;
 go
 
 -- create tables
-CREATE TABLE production.categories (
+CREATE TABLE categories (
 	category_id INT PRIMARY KEY,
 	category_name VARCHAR (255) NOT NULL
 );
 
-CREATE TABLE production.brands (
+CREATE TABLE brands (
 	brand_id INT PRIMARY KEY,
 	brand_name VARCHAR (255) NOT NULL
 );
 
-CREATE TABLE production.products (
+CREATE TABLE products (
 	product_id INT PRIMARY KEY,
 	product_name VARCHAR (255) NOT NULL,
 	brand_id INT NOT NULL,
@@ -24,7 +23,7 @@ CREATE TABLE production.products (
 	list_price DECIMAL (10, 2) NOT NULL
 );
 
-CREATE TABLE sales.customers (
+CREATE TABLE customers (
 	customer_id INT PRIMARY KEY,
 	first_name VARCHAR (255) NOT NULL,
 	last_name VARCHAR (255) NOT NULL,
@@ -36,7 +35,7 @@ CREATE TABLE sales.customers (
 	zip_code VARCHAR (5)
 );
 
-CREATE TABLE sales.stores (
+CREATE TABLE stores (
 	store_id INT PRIMARY KEY,
 	store_name VARCHAR (255) NOT NULL,
 	phone VARCHAR (25),
@@ -47,7 +46,7 @@ CREATE TABLE sales.stores (
 	zip_code VARCHAR (5)
 );
 
-CREATE TABLE sales.staffs (
+CREATE TABLE staffs (
 	staff_id INT IDENTITY (1, 1) PRIMARY KEY,
 	first_name VARCHAR (50) NOT NULL,
 	last_name VARCHAR (50) NOT NULL,
@@ -58,7 +57,7 @@ CREATE TABLE sales.staffs (
 	manager_id INT
 );
 
-CREATE TABLE sales.orders (
+CREATE TABLE orders (
 	order_id INT IDENTITY (1, 1) PRIMARY KEY,
 	customer_id INT,
 	order_status tinyint NOT NULL,
@@ -70,7 +69,7 @@ CREATE TABLE sales.orders (
 	staff_id INT NOT NULL
 );
 
-CREATE TABLE sales.order_items (
+CREATE TABLE order_items (
 	order_id INT,
 	item_id INT,
 	product_id INT NOT NULL,
@@ -80,7 +79,7 @@ CREATE TABLE sales.order_items (
 	PRIMARY KEY (order_id, item_id)
 );
 
-CREATE TABLE production.stocks (
+CREATE TABLE stocks (
 	store_id INT,
 	product_id INT,
 	quantity INT,

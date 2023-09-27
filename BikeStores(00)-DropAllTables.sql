@@ -1,14 +1,3 @@
-/*
---------------------------------------------------------------------
-© 2017 sqlservertutorial.net All Rights Reserved
---------------------------------------------------------------------
-Name   : BikeStores
-Link   : http://www.sqlservertutorial.net/load-sample-database/
-Version: 1.0
---------------------------------------------------------------------
-*/
-
--- drop tables
 DROP TABLE IF EXISTS sales.order_items;
 DROP TABLE IF EXISTS sales.orders;
 DROP TABLE IF EXISTS production.stocks;

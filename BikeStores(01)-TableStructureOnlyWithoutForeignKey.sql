@@ -1,8 +1,10 @@
-CREATE DATABASE BikeStores;
-go
-USE BikeStores;
+CREATE SCHEMA production;
 go
 
+CREATE SCHEMA sales;
+go
+
+-- create tables
 CREATE TABLE categories (
 	category_id INT IDENTITY (1, 1) PRIMARY KEY,
 	category_name VARCHAR (255) NOT NULL

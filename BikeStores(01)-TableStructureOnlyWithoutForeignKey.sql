@@ -1,7 +1,7 @@
-CREATE SCHEMA production;
+CREATE SCHEMA BikeStores;
 go
 
-CREATE SCHEMA sales;
+use BikeStores;
 go
 
 -- create tables

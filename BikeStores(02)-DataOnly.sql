@@ -1,8 +1,6 @@
-
-
 use BikeStores;
 
-
+SET IDENTITY_INSERT brands ON;  
 
 INSERT INTO brands(brand_id,brand_name) VALUES(1,'Electra')
 INSERT INTO brands(brand_id,brand_name) VALUES(2,'Haro')
@@ -14,6 +12,9 @@ INSERT INTO brands(brand_id,brand_name) VALUES(7,'Sun Bicycles')
 INSERT INTO brands(brand_id,brand_name) VALUES(8,'Surly')
 INSERT INTO brands(brand_id,brand_name) VALUES(9,'Trek')
 
+SET IDENTITY_INSERT brands OFF;  
+
+SET IDENTITY_INSERT categories ON;  
 INSERT INTO categories(category_id,category_name) VALUES(1,'Children Bicycles')
 INSERT INTO categories(category_id,category_name) VALUES(2,'Comfort Bicycles')
 INSERT INTO categories(category_id,category_name) VALUES(3,'Cruisers Bicycles')
@@ -22,6 +23,9 @@ INSERT INTO categories(category_id,category_name) VALUES(5,'Electric Bikes')
 INSERT INTO categories(category_id,category_name) VALUES(6,'Mountain Bikes')
 INSERT INTO categories(category_id,category_name) VALUES(7,'Road Bikes')
 
+SET IDENTITY_INSERT categories OFF;  
+
+SET IDENTITY_INSERT products ON;
 INSERT INTO products(product_id, product_name, brand_id, category_id, model_year, list_price) VALUES(1,'Trek 820 - 2016',9,6,2016,379.99)
 INSERT INTO products(product_id, product_name, brand_id, category_id, model_year, list_price) VALUES(2,'Ritchey Timberwolf Frameset - 2016',5,6,2016,749.99)
 INSERT INTO products(product_id, product_name, brand_id, category_id, model_year, list_price) VALUES(3,'Surly Wednesday Frameset - 2016',8,6,2016,999.99)
@@ -344,6 +348,9 @@ INSERT INTO products(product_id, product_name, brand_id, category_id, model_year
 INSERT INTO products(product_id, product_name, brand_id, category_id, model_year, list_price) VALUES(320,'Trek Checkpoint SL 6 - 2019',9,7,2019,3799.99)
 INSERT INTO products(product_id, product_name, brand_id, category_id, model_year, list_price) VALUES(321,'Trek Checkpoint ALR Frameset - 2019',9,7,2019,3199.99)
 
+SET IDENTITY_INSERT products OFF;
+
+-- customers table
 INSERT INTO customers(first_name, last_name, phone, email, street, city, state, zip_code) VALUES('Debra','Burks',NULL,'debra.burks@yahoo.com','9273 Thorne Ave. ','Orchard Park','NY',14127);
 INSERT INTO customers(first_name, last_name, phone, email, street, city, state, zip_code) VALUES('Kasha','Todd',NULL,'kasha.todd@yahoo.com','910 Vine Street ','Campbell','CA',95008);
 INSERT INTO customers(first_name, last_name, phone, email, street, city, state, zip_code) VALUES('Tameka','Fisher',NULL,'tameka.fisher@aol.com','769C Honey Creek St. ','Redondo Beach','CA',90278);
@@ -2739,6 +2746,7 @@ INSERT INTO stocks(store_id, product_id, quantity) VALUES(3,311,23);
 INSERT INTO stocks(store_id, product_id, quantity) VALUES(3,312,18);
 INSERT INTO stocks(store_id, product_id, quantity) VALUES(3,313,0);
 
+SET IDENTITY_INSERT staffs ON;  
 
 INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id) VALUES(1,'Fabiola','Jackson','fabiola.jackson@bikes.shop','(831) 555-5554',1,1,NULL);
 INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id) VALUES(2,'Mireya','Copeland','mireya.copeland@bikes.shop','(831) 555-5555',1,1,1);
@@ -2751,6 +2759,9 @@ INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_
 INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id) VALUES(9,'Layla','Terrell','layla.terrell@bikes.shop','(972) 530-5556',1,3,7);
 INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id) VALUES(10,'Bernardine','Houston','bernardine.houston@bikes.shop','(972) 530-5557',1,3,7);
 
+SET IDENTITY_INSERT staffs OFF;  
+
+SET IDENTITY_INSERT orders ON;  
 INSERT INTO orders(order_id, customer_id, order_status, order_date, required_date, shipped_date, store_id,staff_id) VALUES(1,259,4,'20160101','20160103','20160103',1,2);
 INSERT INTO orders(order_id, customer_id, order_status, order_date, required_date, shipped_date, store_id,staff_id) VALUES(2,1212,4,'20160101','20160104','20160103',2,6);
 INSERT INTO orders(order_id, customer_id, order_status, order_date, required_date, shipped_date, store_id,staff_id) VALUES(3,523,4,'20160102','20160105','20160103',2,7);
@@ -4367,6 +4378,7 @@ INSERT INTO orders(order_id, customer_id, order_status, order_date, required_dat
 INSERT INTO orders(order_id, customer_id, order_status, order_date, required_date, shipped_date, store_id,staff_id) VALUES(1614,135,3,'20181128','20181128',NULL,3,8);
 INSERT INTO orders(order_id, customer_id, order_status, order_date, required_date, shipped_date, store_id,staff_id) VALUES(1615,136,3,'20181228','20181228',NULL,3,8);
 
+SET IDENTITY_INSERT orders OFF;  
 
 INSERT INTO order_items(order_id, item_id, product_id, quantity, list_price,discount) VALUES(1,1,20,1,599.99,0.2);
 INSERT INTO order_items(order_id, item_id, product_id, quantity, list_price,discount) VALUES(1,2,8,2,1799.99,0.07);

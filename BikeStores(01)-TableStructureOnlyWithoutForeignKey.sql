@@ -1,4 +1,4 @@
-CREATE SCHEMA BikeStores;
+CREATE DATABASE BikeStores;
 go
 
 use BikeStores;

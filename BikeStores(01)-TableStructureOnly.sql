@@ -1,8 +1,4 @@
-CREATE SCHEMA production;
-go
-
-CREATE SCHEMA sales;
-go
+CREATE DATABASE BikeStore;
 
 -- create tables
 CREATE TABLE categories (
